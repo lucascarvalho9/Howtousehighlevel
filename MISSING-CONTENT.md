@@ -1,78 +1,120 @@
 # Salutty Digital — Site Build Notes & Open Items
 
-The site is built and structured per the brief. Everything marked 🔴 in the
-original brief is still open and has been left as a clearly marked
-placeholder on the live pages (dashed "pending" badges) rather than invented.
-This file is the punch list to close those out.
+The site is built and structured per the brief plus the round-two feedback
+call. Everything still open is left as a clearly marked placeholder on the
+live pages (dashed "pending" badges) rather than invented. This file is the
+punch list to close those out.
 
 ## Where placeholders live
 
 Search the codebase for `class="pending"` to find every on-page placeholder
 marker, or grep for `pending` across the repo.
 
-## Open items from the brief
+## What changed in round two
+
+- **Services restructured.** Dropped the "four pillars" framing. Content
+  Production and Paid Ads (renamed from Paid Traffic) are now the two
+  marketed "Core Service" offerings, front and center on Home and Services.
+  Social Media Management, Branding, SEO, Landing Pages, Websites, CRM, and
+  AI Automation are listed as "Also Available," each with its own page for
+  SEO (`/services/<slug>/`, 9 pages total).
+- **Multi-step lead form.** Replaced the single-step contact form with a
+  3-step progressive form (progress bar, Back/Next, chip-style selects) on
+  both the Home page (`#lead-form`) and `/contact/`. Fields: name/phone/email,
+  business name + what they need help with, budget range + optional note.
+- **Real stat added.** The trust bar and one Our Work case now use a real,
+  anonymized result you provided: one client account grew from under 300 to
+  7,000+ followers (~23x) with 5M+ views, in a few months. Client name
+  withheld per your request. Nothing else was fabricated — see "Trust
+  signals" below for what's still a placeholder.
+- **Testimonials removed** (Home and Our Work) since there are none yet.
+- **Copy pass:** removed every em dash sitewide (replaced with commas/periods),
+  removed "no pressure" / "zero pressure" language, reworded the "How We're
+  Different" headline to "We Do It All" (was too close to a friend's
+  business copy), reworded process step 1 so it doesn't presume every
+  engagement starts with an introductory call, renamed Paid Traffic → Paid Ads
+  everywhere.
+- **Location removed.** No more "Orlando, FL" or "Central Florida" anywhere
+  on the site (footer, About, Contact, Content Production), per your request.
+- **Social platforms trimmed** to Instagram + Facebook only (removed
+  YouTube, TikTok, LinkedIn placeholders) — still linking to `#` pending URLs.
+- **Hero visual:** kept the existing marquee/gradient placeholder as-is (your
+  call) — no stock or AI-generated image was added. See "Video reel" below.
+
+## Open items
 
 ### Business basics
-- [ ] Confirm tagline: "We shoot it. We strategize it. We run it." (used as-is per Overrides #4, but brief also flagged it for confirmation)
+- [ ] Confirm tagline: "We shoot it. We strategize it. We run it."
 - [ ] Year founded
-- [ ] Owner name — or keep the site company-only (currently company-only, no owner named anywhere)
+- [ ] Owner name — or keep the site company-only (currently company-only)
 - [ ] Origin story — 2-3 sentences, company-level only (About page has a placeholder block)
 
 ### Contact
 - [ ] Business email address
 - [ ] Hours (Mon–Fri / Sat / Sun)
-- [ ] Social links: Instagram, YouTube, TikTok, LinkedIn, Facebook, Google Business — all icons currently link to `#`
-- [ ] Booking flow: Calendly (or similar) vs. plain form. The `/contact/` page currently has a client-side-only form (no backend wired) — see `assets/js/main.js`.
+- [ ] Instagram and Facebook URLs (icons currently link to `#`)
+- [ ] Booking flow: the multi-step form is client-side only right now (no
+      backend, no Calendly) — see `assets/js/main.js`. Decide where
+      submissions should actually go (CRM, email, Calendly embed, etc.)
+      before this goes live.
 
 ### Trust signals
-- [ ] ROI stat — must be a multiple or percentage, never a dollar figure (Home page trust bar has a placeholder slot)
-- [ ] Google rating + review count, or leave omitted (currently omitted entirely, per the brief's own fallback option)
+- [ ] The 200M+ organic views figure and the 23x / 5M+ case stat are real
+      per what you told me — double-check the exact numbers before launch,
+      since "23x" and "5M+" were rounded down conservatively from what you
+      described.
 
-### Testimonials (need 3)
-Per the brief: pull real quotes from **Giadora Painting**, **ST Renovation**,
-and the realtor client. Format: quote, first name, business name, service.
-Three placeholder testimonial cards exist on the Home and Our Work pages —
-drop the real quotes in once sourced. Nothing was invented for these.
+### Testimonials
+Removed for now (none available). Brief originally pointed at Giadora
+Painting, ST Renovation, and a realtor client as sources — worth
+revisiting once you have quotes to add back.
 
 ### Case studies / Our Work
-Three placeholder case study cards exist on `/work/`. For each, still needed:
-client name, one-line problem, one-line solution, and result expressed as a
-**multiple or percentage only** — never a dollar amount or client revenue figure.
+One real (anonymized) case is live. Two placeholder case study cards remain
+on `/work/` and the Home page teaser — client name, one-line problem,
+one-line solution, and result as a **multiple or percentage only**.
 
 ### Brand & design
 - [ ] Logo (SVG/PNG, transparent) — site currently uses a text wordmark ("Salutty.")
-- [ ] Brand hex codes — site currently uses a placeholder dark/red-orange
-      palette defined as CSS variables in `assets/css/style.css` (`:root`).
-      Swap those values once real brand colors land; nothing else needs to change.
-- [ ] Reference sites you like, if any, to sanity-check direction
+- [ ] Brand hex codes — placeholder dark/red-orange palette in
+      `assets/css/style.css` (`:root`). Swap those values once real brand
+      colors land; nothing else needs to change.
+
+### Hero visual
+No image or video was added — decided to keep the current marquee/gradient
+placeholder until real footage or photography is ready. The `<video>` tag is
+already wired up (see the commented `<source>` line in `index.html`); drop
+the file in and uncomment it once the reel is cut. I don't have an
+image-generation tool in this environment, so a literal "AI generated
+picture" isn't something I can produce directly — if you want a placeholder
+photo before real footage is ready, generate/source one and send it over and
+I'll wire it in.
 
 ### Extras
 - [ ] Language: English only vs. EN/PT toggle — built English-only for now
 - [ ] Booking tool decision (see Contact above)
 
-### Video reel
-The hero requires a muted autoplay background video. No footage exists yet,
-so the hero currently uses a looping marquee of the four service names plus
-an animated gradient as the motion element, with an empty `<video>` tag
-already wired up (see `<!-- <source src="/assets/video/reel.mp4" ... -->`
-in `index.html`) — drop the file in and uncomment the source line once the
-reel is cut.
-
 ## Structure delivered
 
 ```
-/                                  Home
-/about/                            About
-/services/                         Services overview
-/services/content-production/
+/                                        Home
+/about/                                  About
+/services/                               Services overview
+/services/content-production/            Core service
+/services/paid-ads/                      Core service
 /services/social-media-management/
-/services/paid-traffic/
+/services/branding/
+/services/seo/
+/services/landing-pages/
 /services/websites/
-/work/                             Our Work (case studies)
-/contact/                          Tell Us About Your Business
-/privacy-policy/                   Legal (template — needs legal review)
-/terms-conditions/                 Legal (template — needs legal review)
+/services/crm/
+/services/ai-automation/
+/work/                                   Our Work (case studies)
+/contact/                                Tell Us About Your Business
+/privacy-policy/                         Legal (template — needs legal review)
+/terms-conditions/                       Legal (template — needs legal review)
 ```
 
 No area pages, no industry pages, no pricing anywhere, no WhatsApp — per
-the overrides.
+the original overrides. No location mentioned anywhere — per round-two
+feedback.

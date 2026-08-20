@@ -21,16 +21,88 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Contact form: client-side only until a booking/backend tool is chosen.
-  // See MISSING-CONTENT.md — BOOKING.
-  var form = document.getElementById("contact-form");
-  if (form) {
+  // Multi-step lead form(s)
+  document.querySelectorAll(".lead-form-card").forEach(initLeadForm);
+
+  function initLeadForm(form) {
+    var panels = Array.prototype.slice.call(form.querySelectorAll(".form-step-panel"));
+    var total = panels.length;
+    var current = 1;
+    var fill = form.querySelector("[data-progress-fill]");
+    var stepLabel = form.querySelector("[data-step-label]");
+    var percentLabel = form.querySelector("[data-step-percent]");
+    var successPanel = document.getElementById(form.getAttribute("data-success-target"));
+
+    function render() {
+      panels.forEach(function (p) {
+        p.classList.toggle("active", parseInt(p.dataset.step, 10) === current);
+      });
+      var pct = Math.round((current / total) * 100);
+      if (fill) fill.style.width = pct + "%";
+      if (stepLabel) stepLabel.textContent = "Step " + current + " of " + total;
+      if (percentLabel) percentLabel.textContent = pct + "%";
+    }
+
+    function firstInvalidInCurrentStep() {
+      var panel = panels[current - 1];
+      var fields = Array.prototype.slice.call(panel.querySelectorAll("[required]"));
+      var seenRadioGroups = {};
+      for (var i = 0; i < fields.length; i++) {
+        var f = fields[i];
+        if (f.type === "radio") {
+          if (seenRadioGroups[f.name]) continue;
+          seenRadioGroups[f.name] = true;
+          var group = panel.querySelectorAll('input[name="' + f.name + '"]');
+          var checked = Array.prototype.some.call(group, function (g) {
+            return g.checked;
+          });
+          if (!checked) return f;
+        } else if (!f.value || !f.value.trim() || (f.checkValidity && !f.checkValidity())) {
+          return f;
+        }
+      }
+      return null;
+    }
+
+    function advance() {
+      var invalid = firstInvalidInCurrentStep();
+      if (invalid) {
+        if (invalid.type === "radio") {
+          invalid.focus();
+        } else if (invalid.reportValidity) {
+          invalid.reportValidity();
+        } else {
+          invalid.focus();
+        }
+        return;
+      }
+      if (current < total) {
+        current++;
+        render();
+      } else {
+        form.style.display = "none";
+        if (successPanel) successPanel.classList.add("show");
+      }
+    }
+
+    form.querySelectorAll('[data-action="next"]').forEach(function (btn) {
+      btn.addEventListener("click", advance);
+    });
+
+    form.querySelectorAll('[data-action="back"]').forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        if (current > 1) {
+          current--;
+          render();
+        }
+      });
+    });
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      var success = document.getElementById("form-success");
-      form.reset();
-      form.style.display = "none";
-      if (success) success.classList.add("show");
+      advance();
     });
+
+    render();
   }
 });

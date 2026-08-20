@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Salutty Digital</title>
-<meta name="description" content="Tell us about your business. Book a no-pressure first call with Salutty Digital.">
+<title>Contact | Salutty Digital</title>
+<meta name="description" content="Tell us about your business. Book a call with Salutty Digital.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23ff4b2b'/%3E%3Ctext x='50' y='68' font-family='Arial Black, Arial, sans-serif' font-size='60' font-weight='900' text-anchor='middle' fill='%230a0a0b'%3ES%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,9 +27,14 @@
           <a href="/services/">Services</a>
           <ul class="dropdown">
             <li><a href="/services/content-production/">Content Production</a></li>
+            <li><a href="/services/paid-ads/">Paid Ads</a></li>
             <li><a href="/services/social-media-management/">Social Media Management</a></li>
-            <li><a href="/services/paid-traffic/">Paid Traffic</a></li>
+            <li><a href="/services/branding/">Branding</a></li>
+            <li><a href="/services/seo/">SEO</a></li>
+            <li><a href="/services/landing-pages/">Landing Pages</a></li>
             <li><a href="/services/websites/">Websites</a></li>
+            <li><a href="/services/crm/">CRM</a></li>
+            <li><a href="/services/ai-automation/">AI Automation</a></li>
           </ul>
         </li>
         <li><a href="/work/">Our Work</a></li>
@@ -53,7 +58,7 @@
       <p class="breadcrumbs"><a href="/">Home</a> / Contact</p>
       <p class="eyebrow">Get In Touch</p>
       <h1 class="h1">Tell Us About Your Business.</h1>
-      <p class="lede" style="margin-top:var(--space-2);">No pressure, no pitch deck on the first call. Just a conversation about where you are and where you want to go.</p>
+      <p class="lede" style="margin-top:var(--space-2);">A real conversation about your business, not a sales pitch. Three quick steps, so we come prepared instead of guessing.</p>
     </div>
   </section>
 
@@ -61,51 +66,71 @@
     <div class="container">
       <div class="grid grid-2" style="align-items:start;">
 
-        <div class="card">
-          <form id="contact-form" novalidate>
-            <div class="form-grid">
-              <div class="field">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
+        <div>
+<form class="lead-form-card" id="contact-form" data-success-target="contact-form-success" novalidate>
+              <div class="form-progress-head">
+                <span class="form-step-label" data-step-label>Step 1 of 3</span>
+                <span class="form-step-label" data-step-percent>33%</span>
               </div>
-              <div class="field">
-                <label for="business">Business Name</label>
-                <input type="text" id="business" name="business" required>
+              <div class="form-progress-track"><div class="form-progress-fill" data-progress-fill></div></div>
+
+              <div class="form-step-panel active" data-step="1">
+                <div class="form-step-title">
+                  <h3>Let's Start With The Basics</h3>
+                  <p>Who are we talking to?</p>
+                </div>
+                <div class="form-grid">
+                  <div class="field"><label for="contact-form-name">Name</label><input type="text" id="contact-form-name" name="name" required></div>
+                  <div class="field"><label for="contact-form-phone">Phone</label><input type="tel" id="contact-form-phone" name="phone" required></div>
+                  <div class="field full"><label for="contact-form-email">Email</label><input type="email" id="contact-form-email" name="email" required></div>
+                </div>
+                <div class="form-nav"><span class="spacer"></span><button type="button" class="btn btn-primary" data-action="next">Next</button></div>
               </div>
-              <div class="field">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+
+              <div class="form-step-panel" data-step="2">
+                <div class="form-step-title">
+                  <h3>About Your Business</h3>
+                  <p>What are you looking to get done?</p>
+                </div>
+                <div class="field full"><label for="contact-form-business">Business Name</label><input type="text" id="contact-form-business" name="business" required></div>
+                <div class="field full" style="margin-top:var(--space-3);">
+                  <label>What do you need help with?</label>
+                  <div class="chip-select">
+                    <label class="chip-option"><input type="radio" name="contact-form-need" value="Content Production" required><span>Content Production</span></label>
+                    <label class="chip-option"><input type="radio" name="contact-form-need" value="Paid Ads"><span>Paid Ads</span></label>
+                    <label class="chip-option"><input type="radio" name="contact-form-need" value="Both"><span>Both</span></label>
+                    <label class="chip-option"><input type="radio" name="contact-form-need" value="Something Else"><span>Something Else</span></label>
+                  </div>
+                </div>
+                <div class="form-nav"><button type="button" class="btn btn-back" data-action="back">Back</button><button type="button" class="btn btn-primary" data-action="next">Next</button></div>
               </div>
-              <div class="field">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone">
+
+              <div class="form-step-panel" data-step="3">
+                <div class="form-step-title">
+                  <h3>Almost Done</h3>
+                  <p>This helps us come prepared.</p>
+                </div>
+                <div class="field full">
+                  <label>Monthly budget range</label>
+                  <div class="chip-select">
+                    <label class="chip-option"><input type="radio" name="contact-form-budget" value="Under $1,000" required><span>Under $1,000</span></label>
+                    <label class="chip-option"><input type="radio" name="contact-form-budget" value="$1,000 to $3,000"><span>$1,000 to $3,000</span></label>
+                    <label class="chip-option"><input type="radio" name="contact-form-budget" value="$3,000 to $10,000"><span>$3,000 to $10,000</span></label>
+                    <label class="chip-option"><input type="radio" name="contact-form-budget" value="$10,000+"><span>$10,000+</span></label>
+                    <label class="chip-option"><input type="radio" name="contact-form-budget" value="Not sure yet"><span>Not Sure Yet</span></label>
+                  </div>
+                </div>
+                <div class="field full" style="margin-top:var(--space-3);">
+                  <label for="contact-form-note">Anything else we should know? (optional)</label>
+                  <textarea id="contact-form-note" name="note"></textarea>
+                </div>
+                <div class="form-nav"><button type="button" class="btn btn-back" data-action="back">Back</button><button type="submit" class="btn btn-primary">Book a Call</button></div>
               </div>
-              <div class="field full">
-                <label for="service">What are you interested in?</label>
-                <select id="service" name="service">
-                  <option value="">Select a service</option>
-                  <option value="content-production">Content Production</option>
-                  <option value="social-media-management">Social Media Management</option>
-                  <option value="paid-traffic">Paid Traffic</option>
-                  <option value="websites">Websites</option>
-                  <option value="not-sure">Not sure yet</option>
-                </select>
-              </div>
-              <div class="field full">
-                <label for="message">Tell us about your business</label>
-                <textarea id="message" name="message" required></textarea>
-              </div>
+            </form>
+            <div class="form-success" id="contact-form-success">
+              <h3 class="mt-0">Thanks, that's exactly what we needed.</h3>
+              <p style="color:var(--color-text-muted);">We'll look at what you shared and reach out to set up a time to talk.</p>
             </div>
-            <button type="submit" class="btn btn-primary btn-block" style="margin-top:var(--space-3);">Book a Call</button>
-            <p class="form-note">
-              This form is a placeholder — <span class="pending">booking tool pending</span>.
-              Submissions aren't wired to a backend or Calendly yet; decide the booking flow and connect it here.
-            </p>
-          </form>
-          <div class="form-success" id="form-success">
-            <h3 class="mt-0">Thanks — we'll be in touch.</h3>
-            <p style="color:var(--color-text-muted);">We'll reach out to schedule your no-pressure first call.</p>
-          </div>
         </div>
 
         <div>
@@ -119,9 +144,8 @@
               <div class="value"><span class="pending">Business email pending</span></div>
             </div>
             <div class="info-item">
-              <div class="label">Location</div>
-              <div class="value">Orlando, FL</div>
-              <p style="color:var(--color-text-muted); font-size:0.9rem; margin-top:0.3rem;">On-location production: Central Florida, travel by arrangement.</p>
+              <div class="label">On-Location Production</div>
+              <p style="color:var(--color-text-muted); font-size:0.9rem; margin-top:0.3rem;">Available, with travel arranged based on the shoot.</p>
             </div>
             <div class="info-item">
               <div class="label">Hours</div>
@@ -130,11 +154,8 @@
             <div class="info-item">
               <div class="label">Follow Along</div>
               <div class="social-row">
-                <a href="#" aria-label="Instagram" title="Instagram — link pending">IG</a>
-                <a href="#" aria-label="YouTube" title="YouTube — link pending">YT</a>
-                <a href="#" aria-label="TikTok" title="TikTok — link pending">TT</a>
-                <a href="#" aria-label="LinkedIn" title="LinkedIn — link pending">IN</a>
-                <a href="#" aria-label="Facebook" title="Facebook — link pending">FB</a>
+                <a href="#" aria-label="Instagram" title="Instagram: link pending">IG</a>
+                <a href="#" aria-label="Facebook" title="Facebook: link pending">FB</a>
               </div>
             </div>
           </div>
@@ -151,13 +172,10 @@
     <div class="footer-grid">
       <div class="footer-col">
         <a href="/" class="logo">Salutty<span>.</span></a>
-        <p class="footer-blurb">Full-service content production and digital marketing. We shoot it. We strategize it. We run it.</p>
+        <p class="footer-blurb">Content production and paid ads, built and run by one team.</p>
         <div class="social-row">
-          <a href="#" aria-label="Instagram" title="Instagram — link pending">IG</a>
-          <a href="#" aria-label="YouTube" title="YouTube — link pending">YT</a>
-          <a href="#" aria-label="TikTok" title="TikTok — link pending">TT</a>
-          <a href="#" aria-label="LinkedIn" title="LinkedIn — link pending">IN</a>
-          <a href="#" aria-label="Facebook" title="Facebook — link pending">FB</a>
+          <a href="#" aria-label="Instagram" title="Instagram: link pending">IG</a>
+          <a href="#" aria-label="Facebook" title="Facebook: link pending">FB</a>
         </div>
       </div>
       <div class="footer-col">
@@ -172,9 +190,8 @@
         <h4>Services</h4>
         <ul>
           <li><a href="/services/content-production/">Content Production</a></li>
-          <li><a href="/services/social-media-management/">Social Media Management</a></li>
-          <li><a href="/services/paid-traffic/">Paid Traffic</a></li>
-          <li><a href="/services/websites/">Websites</a></li>
+          <li><a href="/services/paid-ads/">Paid Ads</a></li>
+          <li><a href="/services/">All Services</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -182,7 +199,6 @@
         <ul>
           <li><a href="tel:+14076932936">(407) 693-2936</a></li>
           <li><span class="pending">Email pending</span></li>
-          <li>Orlando, FL</li>
         </ul>
       </div>
     </div>

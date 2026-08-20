@@ -166,16 +166,26 @@ h3, .h3 { font-size: clamp(1.3rem, 2.4vw, 1.75rem); }
   border: 1px solid var(--color-line);
   border-radius: var(--radius-sm);
   padding: 0.5rem;
-  min-width: 240px;
+  min-width: 250px;
+  max-height: 70vh;
+  overflow-y: auto;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
 }
-.has-dropdown:hover .dropdown,
-.has-dropdown:focus-within .dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
+.dropdown .dropdown-divider {
+  border: none;
+  border-top: 1px solid var(--color-line);
+  margin: 0.4rem 0.4rem;
+}
+.dropdown li a.featured { color: var(--color-text); }
+@media (min-width: 901px) {
+  .has-dropdown:hover .dropdown,
+  .has-dropdown:focus-within .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 .dropdown li a { display: block; padding: 0.6rem 0.8rem; border-radius: 6px; font-size: 0.85rem; }
 .dropdown li a:hover { background: var(--color-surface-2); }
@@ -453,6 +463,113 @@ h3, .h3 { font-size: clamp(1.3rem, 2.4vw, 1.75rem); }
 .form-success { display: none; background: var(--color-surface); border: 1px solid var(--color-accent); border-radius: var(--radius-sm); padding: var(--space-3); margin-top: var(--space-3); }
 .form-success.show { display: block; }
 
+/* --- Secondary services strip --- */
+.also-available {
+  margin-top: var(--space-5);
+  border-top: 1px solid var(--color-line);
+  padding-top: var(--space-4);
+}
+.also-available .strip-label {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: var(--color-text-faint);
+  margin-bottom: var(--space-2);
+}
+.service-chip-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.service-chip {
+  border: 1px solid var(--color-line-strong);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.service-chip:hover { border-color: var(--color-accent); color: var(--color-text); }
+
+.service-mini-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.service-mini-card h3 { font-size: 1.05rem; }
+.service-mini-card p { color: var(--color-text-muted); font-size: 0.88rem; }
+
+/* --- Multi-step lead form --- */
+.lead-form-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+}
+.form-progress-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+.form-step-label {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+.form-progress-track {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-surface-2);
+  overflow: hidden;
+  margin-bottom: var(--space-3);
+}
+.form-progress-fill {
+  height: 100%;
+  width: 33.33%;
+  background: var(--color-accent);
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+.form-step-panel { display: none; }
+.form-step-panel.active { display: block; }
+.form-step-title { margin-bottom: var(--space-2); }
+.form-step-title h3 { margin-bottom: 0.3rem; }
+.form-step-title p { color: var(--color-text-muted); font-size: 0.9rem; }
+
+.chip-select { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.chip-option { display: inline-flex; }
+.chip-option input { position: absolute; opacity: 0; pointer-events: none; }
+.chip-option span {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-line-strong);
+  border-radius: 999px;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.chip-option input:checked + span {
+  border-color: var(--color-accent);
+  background: rgba(255, 75, 43, 0.12);
+  color: var(--color-text);
+}
+.chip-option input:focus-visible + span { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+.form-nav { display: flex; justify-content: space-between; gap: var(--space-2); margin-top: var(--space-4); }
+.form-nav .btn-back {
+  background: none;
+  border: 1px solid var(--color-line-strong);
+  color: var(--color-text-muted);
+}
+.form-nav .btn-back:hover { border-color: var(--color-text); color: var(--color-text); }
+.form-nav .spacer { flex: 1; }
+
 /* --- Contact info list --- */
 .info-list { display: flex; flex-direction: column; gap: var(--space-3); }
 .info-item .label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-faint); margin-bottom: 0.2rem; }
@@ -495,6 +612,11 @@ h3, .h3 { font-size: clamp(1.3rem, 2.4vw, 1.75rem); }
   color: var(--color-text-faint);
 }
 .footer-bottom a:hover { color: var(--color-text); }
+
+/* --- Legal pages --- */
+.legal p, .legal li { color: var(--color-text-muted); margin-bottom: 1rem; }
+.legal h2 { margin-top: var(--space-5); margin-bottom: var(--space-2); }
+.legal ul { padding-left: 1.2rem; list-style: disc; }
 
 /* --- Utilities --- */
 .text-center { text-align: center; }
