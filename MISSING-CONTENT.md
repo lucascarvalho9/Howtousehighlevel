@@ -50,9 +50,9 @@ marker, or grep for `pending` across the repo.
 - [ ] Origin story — 2-3 sentences, company-level only (About page has a placeholder block)
 
 ### Contact
-- [ ] Business email address
-- [ ] Hours (Mon–Fri / Sat / Sun)
-- [ ] Instagram and Facebook URLs (icons currently link to `#`)
+- [x] Business email address: stdigital.us@gmail.com (footer, Contact page, Privacy Policy, Terms)
+- [x] Hours: Monday to Friday, 8am to 5pm (Contact page)
+- [x] Instagram (instagram.com/stdigital.us) and Facebook (facebook.com/profile.php?id=61568142107789) linked everywhere the icons appear
 - [ ] Booking flow: the multi-step form is client-side only right now (no
       backend, no Calendly) — see `assets/js/main.js`. Decide where
       submissions should actually go (CRM, email, Calendly embed, etc.)
@@ -71,8 +71,9 @@ revisiting once you have quotes to add back.
 
 ### Case studies / Our Work
 One real (anonymized) case is live. Two placeholder case study cards remain
-on `/work/` and the Home page teaser — client name, one-line problem,
-one-line solution, and result as a **multiple or percentage only**.
+on `/work/` and the Home page teaser, left as-is for now at your request —
+no rush, drop client name, one-line problem, one-line solution, and result
+as a **multiple or percentage only** whenever you have them.
 
 ### Brand & design
 - [ ] Logo (SVG/PNG, transparent) — site currently uses a text wordmark ("Salutty.")
