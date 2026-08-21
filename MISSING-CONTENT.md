@@ -10,6 +10,24 @@ punch list to close those out.
 Search the codebase for `class="pending"` to find every on-page placeholder
 marker, or grep for `pending` across the repo.
 
+## What changed in round seven
+
+The middle trust-bar stat (23x follower growth) was scoped to one client,
+and you wanted the trust bar to feel company-wide, not "a client of mine."
+You floated an AI-savings dollar figure but weren't sure of the number,
+same fabrication issue as before. Replaced it with a capability stat
+instead of an outcome stat: "24/7 — AI-powered client response, day and
+night." It's honest (true by design, not a claim needing evidence), fits
+the same clean format as the other two, and backs up the exact point you
+cared about (fast enough replies that you don't lose the lead). The
+staffing/scaling argument you also mentioned lives better as supporting
+copy on the AI Automation page than as a headline number, worth adding
+there if you want it spelled out.
+
+The 23x follower-growth result still lives on the Our Work page and the
+Home page teaser, correctly scoped to that one client's case, just no
+longer doubling as the company-wide trust-bar claim.
+
 ## What changed in round six
 
 Reverted the middle stat from "2,200%+" back to "23x" (your preference on
