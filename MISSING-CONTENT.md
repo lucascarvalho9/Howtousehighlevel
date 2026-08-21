@@ -10,6 +10,22 @@ punch list to close those out.
 Search the codebase for `class="pending"` to find every on-page placeholder
 marker, or grep for `pending` across the repo.
 
+## What changed in round five
+
+Both stats got a wording pass for tone: "6-Figures+" read too casual, and
+"23x for one client account" was clunky. Trust bar and the matching case
+copy on `/work/` and the Home teaser now read:
+- 200M+ — Organic social media views generated
+- 2,200%+ — Follower growth in a few months (converted from the 23x
+  multiple to a percentage, same underlying real result, cleaner format)
+- $100K+ — Closed from a single video for one local business (converted
+  from "6-Figures+" to a real number, same conservative approach: not the
+  exact total, which you weren't sure of, but a number you can stand behind)
+
+All three stats now use the same clean numeric format (a number + "+"),
+consistent across the trust bar and both places the follower-growth case
+appears.
+
 ## What changed in round four
 
 Swapped the third trust-bar stat: "5M+ views on a single account" was
