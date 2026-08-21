@@ -10,6 +10,24 @@ punch list to close those out.
 Search the codebase for `class="pending"` to find every on-page placeholder
 marker, or grep for `pending` across the repo.
 
+## What changed in round three
+
+You were worried the two featured services (Content Production, Paid Ads)
+would read as "all we offer" and confuse prospects, especially since AI
+Automation matters for your business-plan pitch. Fixed by reframing, not by
+adding more "pillars":
+- Both Home and Services now explicitly say "full-service" and "where we
+  lead, not where we stop" around the two featured cards.
+- Renamed the secondary services strip from "Also Available" to "Full-Service
+  Support" so it reads as a real offering, not an afterthought.
+- Added a dedicated AI Automation spotlight section on the Home page (separate
+  from its listing in Full-Service Support) with pitch-ready language: faster
+  client response, no lost leads, less internal busywork. Use this section's
+  copy directly if it's useful for your business plan.
+- Strengthened the AI Automation service page copy the same way.
+- The word "pillar" was never used anywhere in the visible copy, only in
+  our conversation, so no on-page wording needed to change there.
+
 ## What changed in round two
 
 - **Services restructured.** Dropped the "four pillars" framing. Content
