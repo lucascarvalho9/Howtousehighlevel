@@ -10,6 +10,21 @@ punch list to close those out.
 Search the codebase for `class="pending"` to find every on-page placeholder
 marker, or grep for `pending` across the repo.
 
+## What changed in round four
+
+Swapped the third trust-bar stat: "5M+ views on a single account" was
+replaced with "6-Figures+ generated from a single video for one local
+business" — a real result from a video you made, deliberately kept
+industry-agnostic (no "pool contractor" mention) so the site doesn't read
+as niched to one type of business. This is a magnitude claim ("six figures
+and up"), not a precise dollar total, since you weren't certain of the
+exact number, this trades the strongest possible number for one you can
+fully stand behind. Also dropped the "plus 5M+ views" clause from the
+follower-growth case description on `/work/`, since you flagged that
+metric as not compelling. If you later want this pool-contractor result
+as its own full case study (with a real number, if you land on one you're
+sure of), it's easy to add as a third `/work/` card.
+
 ## What changed in round three
 
 You were worried the two featured services (Content Production, Paid Ads)
