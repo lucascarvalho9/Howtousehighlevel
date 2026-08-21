@@ -10,6 +10,22 @@ punch list to close those out.
 Search the codebase for `class="pending"` to find every on-page placeholder
 marker, or grep for `pending` across the repo.
 
+## What changed in round nine
+
+Client wanted a closing-rate stat specifically ("AI agents improve X%
+closing rate") instead of the lead-response one. Searched for sources:
+the closing-rate claims out there (23% from a chatbot vendor's own
+"study," 67% increase from aggregator listicles) are much weaker than the
+HBR/MIT lead-response research, mostly vendor marketing rather than
+independent research, and the numbers vary wildly depending on who's
+selling what. Flagged that to the client and they chose the safer option:
+a direct conversion-rate comparison instead of a vague "% increase"
+claim. Trust bar now reads "15-30% — Typical AI chat conversion rate, vs.
+2-5% for a standard contact form." Still industry data, not an own-result
+claim, same caveat as the previous version applies: don't quietly turn
+this into a claim about Salutty's own results without real client data
+to back it.
+
 ## What changed in round eight
 
 "24/7" was honest but didn't answer "so what does that mean for my
