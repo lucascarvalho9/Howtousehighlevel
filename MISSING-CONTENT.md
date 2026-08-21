@@ -10,6 +10,24 @@ punch list to close those out.
 Search the codebase for `class="pending"` to find every on-page placeholder
 marker, or grep for `pending` across the repo.
 
+## What changed in round eight
+
+"24/7" was honest but didn't answer "so what does that mean for my
+business" (money, lost leads). Replaced with a real, sourced industry
+statistic instead of another own-result claim: "21x — More likely to
+qualify a lead with an instant reply, per industry research." This comes
+from a Harvard Business Review / MIT study (Oldroyd) that analyzed 2.24
+million sales leads and found responding within 5 minutes makes a
+business 21x more likely to qualify the lead versus waiting 30 minutes.
+Widely cited, credible source, directly ties to revenue impact.
+
+Important distinction to keep in mind: this stat is labeled "per industry
+research" on purpose, it's a general finding, not a claim that Salutty
+itself delivered this result for a client. Don't let this get edited into
+looking like an own-result stat (e.g. by removing the "per industry
+research" qualifier) unless you actually have your own client data to
+back a number like that.
+
 ## What changed in round seven
 
 The middle trust-bar stat (23x follower growth) was scoped to one client,
