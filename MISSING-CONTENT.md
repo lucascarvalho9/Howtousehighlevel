@@ -10,6 +10,13 @@ punch list to close those out.
 Search the codebase for `class="pending"` to find every on-page placeholder
 marker, or grep for `pending` across the repo.
 
+## What changed in round six
+
+Reverted the middle stat from "2,200%+" back to "23x" (your preference on
+reflection), and corrected "in a few months" to "in three months" for
+accuracy, since that's the real timeframe. Updated everywhere this stat
+appears: trust bar, the Our Work case, and the Home page teaser.
+
 ## What changed in round five
 
 Both stats got a wording pass for tone: "6-Figures+" read too casual, and
