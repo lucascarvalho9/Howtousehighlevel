@@ -55,6 +55,13 @@ document.addEventListener("DOMContentLoaded", function () {
       if (percentLabel) percentLabel.textContent = pct + "%";
     }
 
+    function isValidPhone(value) {
+      var digits = value.replace(/\D/g, "");
+      if (digits.length < 10) return false;
+      if (/^(\d)\1{9,}$/.test(digits)) return false;
+      return true;
+    }
+
     function firstInvalidInCurrentStep() {
       var panel = panels[current - 1];
       var fields = Array.prototype.slice.call(panel.querySelectorAll("[required]"));
@@ -69,9 +76,16 @@ document.addEventListener("DOMContentLoaded", function () {
             return g.checked;
           });
           if (!checked) return f;
-        } else if (!f.value || !f.value.trim() || (f.checkValidity && !f.checkValidity())) {
+          continue;
+        }
+        var val = f.value ? f.value.trim() : "";
+        if (f.setCustomValidity) f.setCustomValidity("");
+        if (!val) return f;
+        if (f.type === "tel" && !isValidPhone(val)) {
+          if (f.setCustomValidity) f.setCustomValidity("Enter a valid 10-digit phone number.");
           return f;
         }
+        if (f.checkValidity && !f.checkValidity()) return f;
       }
       return null;
     }
