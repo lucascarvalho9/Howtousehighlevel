@@ -1,23 +1,23 @@
 /* ==========================================================================
    Salutty Digital — Design System
    Fonts: Staatliches (display) + Montserrat (body)
-   Palette: placeholder — swap CSS variables below once brand hex codes land
+   Palette: per brand spec — dark theme, red used only for buttons/links/highlights
    ========================================================================== */
 
 :root {
-  /* --- Color: PLACEHOLDER palette until brand hex codes are provided --- */
-  --color-bg: #0a0a0b;
-  --color-bg-alt: #131316;
-  --color-surface: #1c1c20;
-  --color-surface-2: #232327;
-  --color-text: #f5f5f2;
-  --color-text-muted: #a8a8ae;
-  --color-text-faint: #6f6f76;
-  --color-accent: #ff4b2b;
-  --color-accent-2: #ffd23f;
-  --color-line: rgba(245, 245, 242, 0.12);
-  --color-line-strong: rgba(245, 245, 242, 0.24);
-  --color-on-accent: #0a0a0b;
+  /* --- Color: brand spec --- */
+  --color-bg: #0a0a0a;
+  --color-bg-alt: #111111;
+  --color-surface: #141414;
+  --color-surface-2: #1c1c1c;
+  --color-text: #ffffff;
+  --color-text-muted: #a1a1a1;
+  --color-text-faint: #6f6f6f;
+  --color-accent: #e31e24;
+  --color-accent-2: #ff3b3b;
+  --color-line: rgba(255, 255, 255, 0.12);
+  --color-line-strong: rgba(255, 255, 255, 0.24);
+  --color-on-accent: #ffffff;
 
   --font-display: "Staatliches", "Arial Narrow", Impact, sans-serif;
   --font-body: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -244,7 +244,7 @@ h3, .h3 { font-size: clamp(1.3rem, 2.4vw, 1.75rem); }
   overflow: hidden;
   margin-top: var(--space-5);
   aspect-ratio: 16 / 7;
-  background: linear-gradient(120deg, #1c1c20, #0a0a0b 60%, #2a1712);
+  background: linear-gradient(120deg, #141414, #0a0a0a 60%, #180a0a);
   border: 1px solid var(--color-line);
 }
 .hero-media video {
@@ -258,8 +258,8 @@ h3, .h3 { font-size: clamp(1.3rem, 2.4vw, 1.75rem); }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 30%, rgba(255, 75, 43, 0.25), transparent 55%),
-    radial-gradient(circle at 80% 70%, rgba(255, 210, 63, 0.15), transparent 50%);
+    radial-gradient(circle at 20% 30%, rgba(227, 30, 36, 0.22), transparent 55%),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.06), transparent 50%);
   animation: pulse-glow 8s ease-in-out infinite;
 }
 @keyframes pulse-glow {
@@ -384,7 +384,7 @@ h3, .h3 { font-size: clamp(1.3rem, 2.4vw, 1.75rem); }
   letter-spacing: 0.03em;
 }
 .compare-table tr:last-child td { border-bottom: none; }
-.compare-table .col-us { background: rgba(255, 75, 43, 0.08); color: var(--color-text); }
+.compare-table .col-us { background: var(--color-surface-2); color: var(--color-text); }
 .compare-table thead .col-us { background: var(--color-accent); color: var(--color-on-accent); border-radius: var(--radius-sm) var(--radius-sm) 0 0; }
 .icon-yes { color: var(--color-accent); font-size: 1.1rem; }
 .icon-no { color: var(--color-text-faint); font-size: 1.1rem; }
@@ -556,7 +556,7 @@ h3, .h3 { font-size: clamp(1.3rem, 2.4vw, 1.75rem); }
 }
 .chip-option input:checked + span {
   border-color: var(--color-accent);
-  background: rgba(255, 75, 43, 0.12);
+  background: rgba(227, 30, 36, 0.14);
   color: var(--color-text);
 }
 .chip-option input:focus-visible + span { outline: 2px solid var(--color-accent); outline-offset: 2px; }
@@ -612,6 +612,56 @@ h3, .h3 { font-size: clamp(1.3rem, 2.4vw, 1.75rem); }
   color: var(--color-text-faint);
 }
 .footer-bottom a:hover { color: var(--color-text); }
+
+/* --- FAQ accordion --- */
+.faq-list { display: flex; flex-direction: column; gap: 0.75rem; max-width: 780px; margin: 0 auto; }
+.faq-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  background: none;
+  border: none;
+  color: var(--color-text);
+  text-align: left;
+  padding: 1.1rem 1.4rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.faq-question .faq-icon {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-line-strong);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+  color: var(--color-accent);
+}
+.faq-item.open .faq-question .faq-icon { transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+}
+.faq-answer p {
+  padding: 0 1.4rem 1.1rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+.faq-item.open .faq-answer { max-height: 240px; }
 
 /* --- Legal pages --- */
 .legal p, .legal li { color: var(--color-text-muted); margin-bottom: 1rem; }

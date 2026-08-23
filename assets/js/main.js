@@ -21,6 +21,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // FAQ accordion
+  document.querySelectorAll(".faq-question").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var item = btn.closest(".faq-item");
+      var wasOpen = item.classList.contains("open");
+      item.parentElement.querySelectorAll(".faq-item.open").forEach(function (openItem) {
+        if (openItem !== item) openItem.classList.remove("open");
+      });
+      item.classList.toggle("open", !wasOpen);
+    });
+  });
+
   // Multi-step lead form(s)
   document.querySelectorAll(".lead-form-card").forEach(initLeadForm);
 

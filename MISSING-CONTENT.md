@@ -10,6 +10,68 @@ punch list to close those out.
 Search the codebase for `class="pending"` to find every on-page placeholder
 marker, or grep for `pending` across the repo.
 
+## What changed in round ten (major overrides pass)
+
+A new "SALUTTY DIGITAL — OVERRIDES" spec came in with a lot of structural
+changes. Where it conflicted with decisions made earlier in this build
+(some of them made specifically because of your own feedback), I checked
+with you before applying anything. Here's exactly what changed and why.
+
+**Kept from the existing build (explicitly confirmed, overriding the new doc):**
+- 9-service structure (2 featured: Content Production, Paid Ads; 7 more
+  including AI Automation) stays, instead of collapsing to 4 pillars. You'd
+  specifically asked me to broaden this earlier because "4 pillars" made
+  the site look like it only offered those 4 things.
+- `/work/` stays as a real page with the 23x follower-growth case, instead
+  of being removed entirely. The new `/blog/` section was added alongside
+  it, not instead of it.
+- The trust bar keeps 3 stats, not the 2 the new doc specified: 200M+
+  views, 15-30% (AI conversion comparison), and now 66x return on ad spend
+  for a construction client (replacing the $100K+ pool-contractor figure
+  the doc's numbers superseded).
+
+**Applied from the new doc:**
+- Orlando is back sitewide: hero subhead ("Based in Orlando. Working with
+  businesses across the U.S."), footer, About page, and the on-location
+  note on the Content Production page ("available in Central Florida...").
+  This reverses the earlier round where you'd asked me to remove it
+  entirely, at your explicit confirmation this time.
+- New color palette: Background #0A0A0A, Surface #141414, Text #FFFFFF,
+  Muted #A1A1A1, Accent red #E31E24. Red is now used only on buttons,
+  links, and small highlights, never as a section background or large
+  color block (fixed a subtle red-tinted table background that violated
+  this, and toned down the hero gradient so it's mostly black/white with
+  a hint of red instead of orange/yellow).
+- CTAs: primary is "Book a Free Call" everywhere (header, hero, every CTA
+  band, the lead form's final submit button). The hero's secondary CTA is
+  now "See How We Work," anchor-scrolling to the How We Work Together
+  section instead of linking to Our Work.
+- Comparison table row renamed "Paid Ads" back to "Ad Management" to match
+  the doc exactly.
+- About page rewritten: no founding story, no year, no founder framing,
+  present tense, company voice only, "What We Believe" instead of "Our
+  Story."
+- Removed the Work Teaser and Final CTA band sections from the homepage
+  (no portfolio/case-study block on the homepage, no redundant final CTA;
+  the lead form up top and the How We Work Together CTA are the
+  homepage's closers).
+- Added an FAQ accordion (5 questions, collapsed by default) to the
+  homepage.
+- Added a real testimonials section skeleton, HTML-commented out, sitting
+  directly above the FAQ, with a "// TESTIMONIALS — add 3 real quotes
+  here" style marker. No quotes, names, or ratings were invented, even as
+  placeholders inside the comment, just bracketed markers like [QUOTE]
+  and [FIRST NAME]. Uncomment and fill in once you have real ones.
+- Added `/blog/` (index) and `/blog/template-post/` (article template),
+  styled and ready, with clearly bracketed placeholder content, not
+  fabricated articles. Blog is reachable only from the nav, nothing links
+  to it from the homepage body.
+
+**Still missing (can't act on this without the actual file):**
+- [ ] Transparent white logo lockup PNG for the header/footer. The site
+      still uses a text wordmark ("Salutty.") since no logo file exists
+      yet. Send the PNG and I'll wire it in.
+
 ## What changed in round nine
 
 Client wanted a closing-rate stat specifically ("AI agents improve X%
@@ -219,11 +281,14 @@ I'll wire it in.
 /services/crm/
 /services/ai-automation/
 /work/                                   Our Work (case studies)
+/blog/                                   Blog index (nav-only, no homepage block)
+/blog/template-post/                     Article template (placeholder content)
 /contact/                                Tell Us About Your Business
 /privacy-policy/                         Legal (template — needs legal review)
 /terms-conditions/                       Legal (template — needs legal review)
 ```
 
-No area pages, no industry pages, no pricing anywhere, no WhatsApp — per
-the original overrides. No location mentioned anywhere — per round-two
-feedback.
+No area pages, no industry pages, no pricing anywhere, no WhatsApp. Orlando
+is now shown in the hero subhead, footer, About page, and the Content
+Production page's on-location note — reinstated in round ten after being
+removed in round two, per your explicit confirmation.
