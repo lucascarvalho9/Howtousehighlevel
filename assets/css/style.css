@@ -266,6 +266,31 @@ h3, .h3 { font-size: clamp(1.3rem, 2.4vw, 1.75rem); }
   0%, 100% { opacity: 0.7; }
   50% { opacity: 1; }
 }
+.media-fallback-hint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--color-text-faint);
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+}
+.media-fallback-hint .play-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--color-line-strong);
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+}
 .reel-marquee {
   position: absolute;
   bottom: 0;
@@ -297,6 +322,9 @@ h3, .h3 { font-size: clamp(1.3rem, 2.4vw, 1.75rem); }
 .hero-copy { max-width: 780px; }
 .hero-copy .lede { margin-top: var(--space-2); font-size: 1.2rem; }
 .hero-cta { display: flex; gap: var(--space-2); flex-wrap: wrap; margin-top: var(--space-4); }
+.mini-check-list { margin-top: var(--space-3); display: flex; flex-direction: column; gap: 0.6rem; }
+.mini-check-list li { display: flex; align-items: center; gap: 0.6rem; color: var(--color-text-muted); font-size: 0.95rem; }
+.mini-check-list li::before { content: "✓"; color: var(--color-accent); font-weight: 700; }
 .pending-note {
   margin-top: var(--space-2);
   font-size: 0.78rem;
