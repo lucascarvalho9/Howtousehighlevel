@@ -1,5 +1,9 @@
 // Salutty Digital — shared site behavior
 
+// Paste your GoHighLevel "Inbound Webhook" URL here to send lead form
+// submissions into a GHL workflow (see setup instructions in the build kit).
+var LEAD_FORM_WEBHOOK_URL = "PASTE_YOUR_GHL_WEBHOOK_URL_HERE";
+
 document.addEventListener("DOMContentLoaded", function () {
   // Mobile nav toggle
   var toggle = document.querySelector(".nav-toggle");
@@ -90,6 +94,26 @@ document.addEventListener("DOMContentLoaded", function () {
       return null;
     }
 
+    function collectFormData() {
+      var fd = new FormData(form);
+      var prefix = form.id + "-";
+      var data = {};
+      fd.forEach(function (value, key) {
+        var cleanKey = key.indexOf(prefix) === 0 ? key.slice(prefix.length) : key;
+        data[cleanKey] = value;
+      });
+      return data;
+    }
+
+    function submitToWebhook() {
+      if (!LEAD_FORM_WEBHOOK_URL || LEAD_FORM_WEBHOOK_URL.indexOf("PASTE_YOUR") === 0) return;
+      fetch(LEAD_FORM_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(collectFormData())
+      }).catch(function () {});
+    }
+
     function advance() {
       var invalid = firstInvalidInCurrentStep();
       if (invalid) {
@@ -106,6 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
         current++;
         render();
       } else {
+        submitToWebhook();
         form.style.display = "none";
         if (successPanel) successPanel.classList.add("show");
       }
