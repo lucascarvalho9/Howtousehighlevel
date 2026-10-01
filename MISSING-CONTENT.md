@@ -26,8 +26,8 @@ with you before applying anything. Here's exactly what changed and why.
   of being removed entirely. The new `/blog/` section was added alongside
   it, not instead of it.
 - The trust bar keeps 3 stats, not the 2 the new doc specified: 200M+
-  views, 15-30% (AI conversion comparison), and now 66x return on ad spend
-  for a construction client (replacing the $100K+ pool-contractor figure
+  views, 15-30% (AI conversion comparison), and now "66× ROAS achieved"
+  (worded as a campaign result, not an average) for a construction client (replacing the $100K+ pool-contractor figure
   the doc's numbers superseded).
 
 **Applied from the new doc:**
