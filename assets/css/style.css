@@ -1,12 +1,21 @@
 /* ==========================================================================
    Salutty Digital — Design System
-   Fonts: Apple system font (San Francisco) on iPhone/Mac; Inter everywhere
-   else, so Windows and Android match the Apple look instead of falling back
-   to Segoe UI / Arial.
+   Fonts: headings in Impact (built into Apple devices and Windows), with
+   Anton, a near-identical web font, for devices without it (Android).
+   Body text in the Apple system font on iPhone/iPad/Mac, Inter elsewhere,
+   so Windows matches the Apple look instead of Segoe UI.
    Palette: per brand spec — dark theme, red used only for buttons/links/highlights
    ========================================================================== */
 
 /* @font-face (not @import) so it works anywhere in a builder's Custom CSS. */
+@font-face {
+  font-family: "Anton";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/anton@5.3.0/files/anton-latin-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 @font-face {
   font-family: "Inter Variable";
   font-style: normal;
@@ -31,7 +40,7 @@
   --color-line-strong: rgba(255, 255, 255, 0.24);
   --color-on-accent: #ffffff;
 
-  --font-display: -apple-system, BlinkMacSystemFont, "Inter Variable", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-display: Impact, "Anton", "Haettenschweiler", "Arial Black", sans-serif;
   --font-body: -apple-system, BlinkMacSystemFont, "Inter Variable", "Inter", "Helvetica Neue", Arial, sans-serif;
 
   --container-w: 1200px;
