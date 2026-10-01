@@ -40,6 +40,59 @@ document.addEventListener("DOMContentLoaded", function () {
   // Multi-step lead form(s)
   document.querySelectorAll(".lead-form-card").forEach(initLeadForm);
 
+  // Vertical client videos: nothing downloads until a video scrolls into
+  // view (preload="none" + poster). Visible videos play muted on loop;
+  // tapping a video or its button turns sound on for that one only.
+  initReels();
+
+  function initReels() {
+    var reels = Array.prototype.slice.call(document.querySelectorAll(".reel"));
+    if (!reels.length) return;
+
+    var conn = navigator.connection;
+    var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var autoplay = !reducedMotion && !(conn && conn.saveData) && "IntersectionObserver" in window;
+
+    function setSound(reel, on) {
+      var video = reel.querySelector("video");
+      var btn = reel.querySelector(".reel-sound");
+      video.muted = !on;
+      reel.classList.toggle("has-sound", on);
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+      btn.setAttribute("aria-label", on ? "Turn sound off" : "Turn sound on");
+    }
+
+    function toggleSound(reel) {
+      var video = reel.querySelector("video");
+      var turnOn = video.muted || video.paused;
+      reels.forEach(function (r) { if (r !== reel) setSound(r, false); });
+      setSound(reel, turnOn);
+      if (turnOn && video.paused) video.play().catch(function () {});
+    }
+
+    reels.forEach(function (reel) {
+      reel.querySelector("video").addEventListener("click", function () { toggleSound(reel); });
+      reel.querySelector(".reel-sound").addEventListener("click", function () { toggleSound(reel); });
+    });
+
+    if (!autoplay) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var reel = entry.target;
+        var video = reel.querySelector("video");
+        if (entry.isIntersecting) {
+          video.play().catch(function () {});
+        } else {
+          video.pause();
+          if (!video.muted) setSound(reel, false);
+        }
+      });
+    }, { threshold: 0.6 });
+
+    reels.forEach(function (reel) { observer.observe(reel); });
+  }
+
   function initLeadForm(form) {
     var panels = Array.prototype.slice.call(form.querySelectorAll(".form-step-panel"));
     var total = panels.length;
