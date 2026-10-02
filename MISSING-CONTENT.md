@@ -7,8 +7,10 @@ punch list to close those out.
 
 ## Where placeholders live
 
-Search the codebase for `class="pending"` to find every on-page placeholder
-marker, or grep for `pending` across the repo.
+As of October 2, 2026 there are none: the case-study placeholders, the
+article template, the commented-out testimonials stub, and the legal-page
+"Date pending" / "needs legal review" badges were all removed or completed.
+The `.pending` badge style is still in the stylesheet if one is ever needed.
 
 ## What changed in round ten (major overrides pass)
 
@@ -284,10 +286,9 @@ I'll wire it in.
 /services/ai-automation/
 /work/                                   Our Work (case studies)
 /blog/                                   Blog index (nav-only, no homepage block)
-/blog/template-post/                     Article template (placeholder content)
 /contact/                                Tell Us About Your Business
-/privacy-policy/                         Legal (template — needs legal review)
-/terms-conditions/                       Legal (template — needs legal review)
+/privacy-policy/                         Legal (completed Oct 2, 2026, incl. SMS wording)
+/terms-conditions/                       Legal (completed Oct 2, 2026, incl. results + SMS)
 ```
 
 No area pages, no industry pages, no pricing anywhere, no WhatsApp. Orlando
