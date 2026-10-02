@@ -168,6 +168,25 @@
         <h2>Content We've Shot, Edited, and Put to Work.</h2>
         <p class="lede" style="margin-left:auto;margin-right:auto;">A few recent videos made for our clients. Tap any video for sound.</p>
       </div>
+      <style>
+        section .reel-strip {
+          display: grid;
+          grid-auto-flow: column;
+          grid-template-columns: none;
+          grid-auto-columns: calc((100% - 3 * var(--space-2)) / 4);
+          gap: var(--space-2);
+          max-width: 1080px;
+          margin: 0 auto;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          scrollbar-width: thin;
+          padding-bottom: var(--space-2);
+        }
+        section .reel-strip .reel { scroll-snap-align: start; }
+        @media (max-width: 980px) { section .reel-strip { grid-auto-columns: 40%; } }
+        @media (max-width: 640px) { section .reel-strip { grid-auto-columns: 72%; } }
+        section .reel-strip-cta { margin-top: var(--space-4); text-align: center; }
+      </style>
       <div class="reel-strip">
         <figure class="reel">
           <video class="reel-video" muted loop playsinline preload="none" poster="/assets/video/reel-1.jpg" aria-label="Salutty Digital client video 1">
