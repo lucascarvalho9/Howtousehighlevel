@@ -240,10 +240,12 @@ Painting, ST Renovation, and a realtor client as sources — worth
 revisiting once you have quotes to add back.
 
 ### Case studies / Our Work
-One real (anonymized) case is live. Two placeholder case study cards remain
-on `/work/` and the Home page teaser, left as-is for now at your request —
-no rush, drop client name, one-line problem, one-line solution, and result
-as a **multiple or percentage only** whenever you have them.
+Three cards are live on `/work/`, all real results: the 23x follower-growth
+client, the 66x ROAS paid-ads client (construction), and 200M+ organic views
+across client accounts. The two "Case study pending" placeholders were
+replaced with the latter two. When a new case is ready (client name or
+"withheld", one-line problem, one-line solution, result as a multiple or
+percentage), swap it in for the 200M+ card or add a fourth.
 
 ### Brand & design
 - [ ] Logo (SVG/PNG, transparent) — site currently uses a text wordmark ("Salutty.")
